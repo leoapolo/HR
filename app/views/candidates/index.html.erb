@@ -1,0 +1,53 @@
+<div class="portlet box yellow">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="ico-table"></i>Candidate List
+		</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse"></a>
+			<a href="javascript:;" class="reload"></a>
+			<a href="javascript:;" class="remove"></a>
+		</div>
+	</div>
+
+	<div class="portlet-body">
+
+ <table class="table table-striped table-bordered table-hover" id="sample_2">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>City of birth</th>
+      <th>Date of birth</th>
+      <th>Country of birth</th>
+      <th>Current location</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates.each do |candidate| %>
+       <tr>
+        <td><%= candidate.first_name  %></td>
+        <td><%= candidate.last_name  %></td>
+        <td><%= candidate.city_of_birth  %></td>
+        <td><%= candidate.date_of_birth  %></td>
+        <td><%= candidate.country_of_birth  %></td>
+        <td><%= candidate.current_location  %></td>
+        <td><%= link_to 'Show', candidate %>|
+        <%= link_to 'Edit', edit_candidate_path(candidate) %>|
+        <%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+       <% end %>
+  </tbody>
+  
+</table>
+
+<br> 
+
+<% if current_user && !current_user.recruiter? %>
+<%= link_to 'New Candidate', new_candidate_path, class: "btn blue" %>
+<% end %>
+</div>
+</div>
+

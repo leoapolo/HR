@@ -1,0 +1,704 @@
+<%= form_for(@candidate) do |f| %>
+  <% if @candidate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+      <ul>
+      <% @candidate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- BEGIN PAGE CONTAINER-->        
+
+			<div class="container-fluid">
+
+
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+						<div class="portlet box yellow">
+							<div class="portlet-title">
+
+								<div class="caption"><i class="ico-edit"></i>Candidate Information</div>
+
+							</div>
+
+							<div class="portlet-body form">
+
+									<div class="portlet box">
+																	
+										<div class="portlet-title">
+											<div class="caption">
+												<i class="ico-table"></i>Basic Info
+											</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse"></a>
+												<a href="javascript:;" class="reload"></a>
+											</div>
+										</div>
+
+										<div class="portlet-body">
+											<div class="row-fluid">
+
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">First Name</label>
+
+															<div class="controls">
+
+                                                                 <%= f.text_field :first_name, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">Last Name</label>
+
+															<div class="controls">
+
+                                                                <%= f.text_field :last_name, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+												</div>
+												
+												<div class="row-fluid">
+
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Date of Birth</label>
+
+															<div class="controls">
+                                                                
+																<%= f.date_select :date_of_birth, :start_year => 1960, :end_year => 2014, :selected=>@candidate.work1_end_date %>
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">Gender</label>
+
+															<div class="controls">
+
+                                                                <%= f.select :field1, options_for_select(%w{ Male Female }, :selected => @candidate.field1), {}, {:class=>"m-wrap span12"} %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+												</div>
+
+												<!--/row-->
+
+												<div class="row-fluid">
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">Country of Birth</label>
+
+															<div class="controls">
+
+                                                                <%= f.text_field :country_of_birth, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">City of Birth</label>
+
+															<div class="controls">
+
+                                                                <%= f.text_field :city_of_birth, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+												</div>
+
+												<!--/row-->        
+
+												<div class="row-fluid">
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">Current Location</label>
+
+															<div class="controls">
+
+                                                                <%= f.text_field :current_location, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+													<div class="span6 ">
+
+														<div class="control-group error">
+
+															<label class="control-label">Preferred Work Location</label>
+
+															<div class="controls">
+
+                                                                <%= f.text_field :preferred_work_location, :class => "m-wrap span12" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+												</div>
+
+
+												<!--/row-->                   
+
+												<div class="row-fluid">
+
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Telephone Number</label>
+
+															<div class="controls">
+
+
+                                                                <%= f.text_field :preferred_contact_phone, :class => "m-wrap span12" %> 	
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--/span-->
+
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label" >Email</label>
+
+															<div class="controls">
+
+
+                                                                <%= f.text_field :email, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+													</div>
+
+												</div>
+         
+
+												<!--/row-->
+                                                <div class="row-fluid">
+
+													<div class="span12 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Self Assessment</label>
+
+															<div class="controls">
+
+															<%= f.text_area :self_assessment, size: "60x6s" %>
+
+															</div>
+
+														</div>
+
+													</div>
+
+												</div>
+										</div>
+									</div>
+									
+									<div class="portlet box">
+										<div class="portlet-title">
+											<div class="caption">
+												<i class="ico-table"></i>Education
+											</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse"></a>
+												<a href="javascript:;" class="reload"></a>
+											</div>
+										</div>
+
+										<div class="portlet-body">
+											<div class="row-fluid">
+
+													
+													
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Date From</label>
+
+															<div class="controls">
+                                                                <%= f.date_select :education1_start_date, :start_year => 1960, :end_year => 2014, :discard_day => true, :selected=>@candidate.education1_start_date %>
+															</div>
+
+														</div>
+
+													</div>
+													
+													
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Date To</label>
+															<div class="controls">
+                                                                <%= f.date_select :education1_end_date, :start_year => 1960, :end_year => 2014, :discard_day => true, :selected=>@candidate.education1_end_date %>
+															</div>
+
+														</div>
+
+													</div>
+																								
+
+											</div>
+										<div class="row-fluid">
+											<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">School</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :univercity1, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+											</div>
+										</div>	
+										<div class="row-fluid">
+											<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Major</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :major1, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+											</div>
+											<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Degree</label>
+
+															<div class="controls">
+                                                               <%= f.select :education1_level, options_for_select(%w{ Bachelor Master Doctorate MBA}, :selected => @candidate.education1_level),{}, {:class => "span12 select2_category"} %>
+															</div>
+
+														</div>
+
+											</div>
+										</div>
+										<div class="row-fluid">
+											<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Description</label>
+
+															<div class="controls">
+                                                            <%= f.text_area :note1, size: "60x6" %>
+                                                            <span class="help-block">You can list the courses that you have taken or describe specific subjects that you have studied.</span>
+															</div>
+
+														</div>
+
+											</div>
+											
+										</div>
+										
+										</div>
+									</div>
+									
+									<div class="portlet box">
+										<div class="portlet-title">
+											<div class="caption">
+												<i class="ico-table"></i>Work Experience
+											</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse"></a>
+												<a href="javascript:;" class="reload"></a>
+											</div>
+										</div>
+
+										<div class="portlet-body">
+											<div class="row-fluid">
+
+													
+													
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Date From</label>
+
+															<div class="controls">
+                                                                <%= f.date_select :work1_start_date, :start_year => 1960, :end_year => 2014, :discard_day => true,:selected=>@candidate.work1_start_date %>
+															</div>
+
+														</div>
+
+													</div>
+													
+													
+													<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Date To</label>
+															<div class="controls">
+                                                                <%= f.date_select :work1_end_date, :start_year => 1960, :end_year => 2014, :discard_day => true,:selected=>@candidate.work1_end_date %>
+															</div>
+
+														</div>
+
+													</div>
+																								
+
+											</div>
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Company</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :company1, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Job Title</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :title1, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>	
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Job Description</label>
+
+															<div class="controls">
+                                                                <%= f.text_area :work1_desc, size: "60x6" %>
+																<span class="help-block">You can give a brief summary of your roles and responsibilities in your work.</span>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+										</div>
+									</div>
+									
+									
+									<div class="portlet box">
+										<div class="portlet-title">
+											<div class="caption">
+												<i class="ico-table"></i>Career Objective
+											</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse"></a>
+												<a href="javascript:;" class="reload"></a>
+											</div>
+										</div>
+
+										<div class="portlet-body">
+											
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Years of Experience</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :field2, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Current Job Title</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :title1, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Current Salary</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :current_salary, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Target Salary</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :expect_salary, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">I can start</label>
+
+															<div class="controls">
+                                                                <%= f.select :onboard_date, options_for_select([ "within 1 week","within 1 month","1 to 3 months","to be determined" ], :selected => @candidate.onboard_date),{}, {:class => "m-wrap span12"} %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Have you ever worked for Merkle before?</label>
+
+															<div class="controls">
+                                                                <%= f.select :ex_merkler, options_for_select(%w{ YES NO }, :selected => @candidate.ex_merkler),{}, {:class => "m-wrap span12"} %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Channel</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :channel, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Channel Details</label>
+
+															<div class="controls">
+                                                                <%= f.text_field :channel_detail, :class => "m-wrap span12" %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Technical Skills</label>
+
+															<div class="controls">
+                                                                <%= f.text_area :field3, size: "60x6" %>
+																<span class="help-block">example:Data Analyst, CRM, SAS, SAS Programming , SQL, R, Matlab,  Analytics, Statistical Modeling, Marketing, SQL Programming, predictive statistical analysis...</span>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									
+									<div class="portlet box">
+										<div class="portlet-title">
+											<div class="caption">
+												<i class="ico-table"></i>Language Skills
+											</div>
+											<div class="tools">
+												<a href="javascript:;" class="collapse"></a>
+												<a href="javascript:;" class="reload"></a>
+											</div>
+										</div>
+
+										<div class="portlet-body">
+											<div class="row-fluid">
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Language</label>
+
+															<div class="controls">
+                                                                <%= f.select :language1, options_for_select([ "English","Japanese","Chinese","French","German","Korean","Thai","Indic","Filipino" ], :selected => @candidate.language1),{}, {:class => "m-wrap span12"} %>
+															</div>
+
+														</div>
+
+												</div>
+												<div class="span6 ">
+
+														<div class="control-group">
+
+															<label class="control-label">Level</label>
+
+															<div class="controls">
+                                                                <%= f.select :language1_level, options_for_select(["Good","Excellent"], :selected => @candidate.language1_level),{}, {:class => "m-wrap span12"} %>
+															</div>
+
+														</div>
+
+												</div>
+												
+											</div>
+											
+											
+										</div>
+									</div>
+											
+								
+															
+										
+
+							</div>
+
+						</div>
+
+						<!-- END EXAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				
+
+				<!-- END PAGE CONTENT-->
+
+
+				
+<% end %>

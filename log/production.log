@@ -2804,3 +2804,16 @@ ActionController::RoutingError (No route matches [GET] "/media/image/favicon.ico
   /usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:455:in `block (3 levels) in start_threads'
 
 
+I, [2014-10-14T16:46:25.293307 #5994]  INFO -- : Migrating to CreateUsers (20140728143853)
+I, [2014-10-14T16:46:25.508548 #5994]  INFO -- : Migrating to AddIndexToUsersEmail (20140728145347)
+I, [2014-10-14T16:46:25.564236 #5994]  INFO -- : Migrating to AddPasswordDigestToUsers (20140728145953)
+I, [2014-10-14T16:46:25.899453 #5994]  INFO -- : Migrating to AddRememberTokenToUsers (20140730130948)
+I, [2014-10-14T16:46:26.502894 #5994]  INFO -- : Migrating to AddAdminToUsers (20140731125834)
+I, [2014-10-14T16:46:26.826654 #5994]  INFO -- : Migrating to CreateMicroposts (20140731133442)
+I, [2014-10-14T16:46:27.174901 #5994]  INFO -- : Migrating to AddRecruiterToUsers (20140806110017)
+I, [2014-10-14T16:46:27.521168 #5994]  INFO -- : Migrating to CreateJobPositions (20140806113535)
+I, [2014-10-14T16:46:27.912308 #5994]  INFO -- : Migrating to CreateJobapps (20140807105229)
+I, [2014-10-14T16:46:28.102209 #5994]  INFO -- : Migrating to CreateRelationships (20140808112256)
+I, [2014-10-14T16:46:28.863889 #5994]  INFO -- : Migrating to CreateDataDictionaries (20140903055543)
+I, [2014-10-14T16:46:29.020401 #5994]  INFO -- : Migrating to CreateMerkleUsers (20140905061000)
+I, [2014-10-14T16:46:29.176933 #5994]  INFO -- : Migrating to CreateRequisitions (20140912030837)

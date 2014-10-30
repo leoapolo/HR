@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :candidates
+
   resources :merkle_users
   
   get 'requisitions/clone'

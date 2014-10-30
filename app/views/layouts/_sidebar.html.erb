@@ -31,10 +31,12 @@
 				<a href="javascript:;"> <i class="icon-group"></i> <span class="title">Candidate</span> <span class="arrow "></span> </a>
 
 				<ul class="sub-menu">
-
+					<li >
+						<%= link_to 'New Candidate', new_candidate_path %>
+					</li>
 					<li >
 
-						<a href="#"> Candidate List</a>
+						<a href="<%= candidates_path%>"> Candidate List </a>
 
 					</li>
 
